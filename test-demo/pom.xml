@@ -9,7 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>cn.zcp.mave.plugin</groupId>
     <artifactId>test-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <name>test-demo</name>
     <!-- FIXME change it to the project's website -->
@@ -28,6 +31,41 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+
+        <!--配置spring包-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.1.8.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.1.8.RELEASE</version>
+        </dependency>
+
+        <!--配置日志log4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.26</version>
+        </dependency>
+
+        <!--添加Servlet包-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--添加JSTL包-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -52,8 +90,8 @@
                     <version>2.22.1</version>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.2.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
@@ -79,13 +117,13 @@
                 1、运行时可以使用mvn命令:例如mvn hello:sayhi。如果您遵循使用惯例${prefix}-maven-plugin
                 2、或者直接使用idea maven工具直接点击运行相关插件.
             -->
-            <plugin>
+            <!--<plugin>
                 <groupId>cn.zcp.mave.plugin</groupId>
                 <artifactId>hello-maven-plugin</artifactId>
                 <version>1.0-SNAPSHOT</version>
-                <!--把此插件加入maven compile插件生命周期中-->
+                &lt;!&ndash;把此插件加入maven compile插件生命周期中&ndash;&gt;
                 <executions>
-                    <execution><!--可以配置多个mojo-->
+                    <execution>&lt;!&ndash;可以配置多个mojo&ndash;&gt;
                         <phase>compile</phase>
                         <goals>
                             <goal>sayhi</goal>
@@ -93,7 +131,45 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>-->
+            <!--文档生成插件-->
+            <plugin>
+                <groupId>cn.zcp.mave.plugin</groupId>
+                <artifactId>apidoc-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <!--把此插件加入maven compile插件生命周期中-->
+                <executions>
+                    <execution><!--可以配置多个mojo-->
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>apidoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--配置需要扫描的包-->
+                    <basePackage>cn.zcp.mave.plugin.controller</basePackage>
+                </configuration>
             </plugin>
         </plugins>
+        <!--<resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                &lt;!&ndash; 是否替换资源中的属性&ndash;&gt;
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>-->
     </build>
 </project>
