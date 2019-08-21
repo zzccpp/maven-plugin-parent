@@ -5,15 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>cn.zcp.mave.plugin</groupId>
-  <artifactId>maven-plugin-parent</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>apidoc-tools</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>hello-maven-plugin</module>
-    <module>zcp-demo</module>
-  </modules>
 
-  <name>maven-plugin-parent</name>
+  <name>apidoc-tools</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

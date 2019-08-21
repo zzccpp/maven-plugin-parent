@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        body {
+            padding: 20px 50px;
+        }
+
+        .page {
+            width: 80%;
+            padding: 8px;
+        }
+
+        .page .title {
+            border: 1px solid #bac6cc;
+            background-color: #f3f9fe;
+            font-size: 18px;
+            font-weight: 600;
+            height: 42px;
+            line-height: 42px;
+        }
+
+        .page .blue-title {
+            padding-left: 16px;
+            font-size: 16px;
+            line-height: 18px;
+            margin-top: 10px;
+            color: #083c8f;
+        }
+
+        .page .blue-title .dot-line {
+            display: inline-block;
+            vertical-align: middle;
+            width: 91.6%;
+            height: 1px;
+            border-top: 1px dashed #7b7b7a;
+        }
+
+        .page .form-item {
+            margin-top: 20px;
+            width: 92%;
+            font-size: 16px;
+        }
+
+        .page .form-item .left {
+            width: 25%;
+            display: inline-block;
+            text-align: right;
+            margin-right: 32px;
+            font-weight: 600;
+            vertical-align: top;
+        }
+
+        .page .form-item .right {
+            text-align: left;
+            display: inline-block;
+            width: 68%;
+        }
+
+        .page .form-item .pad-bg {
+            background-color: #f9f9f9;
+            border: 1px dashed #c5c5c5;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .page .form-item .table {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+        }
+
+        .page .form-item .table tr td {
+            border: 1px solid #e9e9e9;
+            height: 40px;
+            padding-left: 18px;
+        }
+
+        .page .form-item .table tr:nth-child(2n+1) td {
+            background-color: #fbfbfb;
+        }
+
+        .page .form-item .table tr:first-child td {
+            background-color: #f7f7f7;
+        }
+
+        .float-top {
+            position: fixed;
+            top: 10%;
+            right: 1%;
+            width: 220px;
+            border: 1px solid #d3d3d3;
+            padding-left: 15px;
+            padding-bottom: 20px;
+        }
+
+        .float-top a {
+            text-decoration: none;
+            margin-left: 10px;
+            display: block;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="float-top">
+    <h4>目录</h4>
+    <a href="#userManage">1.用户管理</a>
+    <a href="#userManage">2.用户管理</a>
+</div>
+<div class="page" id="userManage">
+    <div class="title">1.用户管理</div>
+    <div class="blue-title">
+        <label>1.1注册接口</label>
+        <div class="dot-line"></div>
+    </div>
+    <div class="form-item">
+        <div class="left">作者</div>
+        <div class="right">辅导费</div>
+    </div>
+    <div class="form-item">
+        <div class="left">最后发布日期</div>
+        <div class="right">2018-05-18</div>
+    </div>
+    <div class="form-item">
+        <div class="left">功能描述</div>
+        <div class="right">黄齑淡饭黄金时代还是看好的开始的计划的时刻</div>
+    </div>
+    <div class="form-item">
+        <div class="left">是否验证授权码</div>
+        <div class="right">是</div>
+    </div>
+    <div class="form-item">
+        <div class="left">是否验证调用者IP</div>
+        <div class="right">是</div>
+    </div>
+    <div class="form-item">
+        <div class="left">是否验证产品版本</div>
+        <div class="right">辅导费</div>
+    </div>
+    <div class="form-item">
+        <div class="left">HTTP请求方式</div>
+        <div class="right">POST</div>
+    </div>
+    <div class="form-item">
+        <div class="left">请求URL</div>
+        <div class="right pad-bg ">www.baidu.com</div>
+    </div>
+    <div class="form-item">
+        <div class="left">请求参数</div>
+        <div class="right">
+            <table class="table">
+                <tr>
+                    <td>参数名称</td>
+                    <td>类型</td>
+                    <td>必填</td>
+                    <td>默认值</td>
+                    <td>描述</td>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td>字符串</td>
+                    <td>是</td>
+                    <td>无</td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td>字符串</td>
+                    <td>是</td>
+                    <td>无</td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td>字符串</td>
+                    <td>是</td>
+                    <td>无</td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="form-item">
+        <div class="left">返回结果说明</div>
+        <div class="right">发动机好快乐的抗衰老的开始空间里的水</div>
+    </div>
+</div>
+</body>
+</html>

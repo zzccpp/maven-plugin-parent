@@ -13,9 +13,6 @@
     <!--1、首先确定打包为maven插件类型-->
     <packaging>maven-plugin</packaging>
 
-
-
-
     <dependencies>
 
         <!--2、添加maven插件依赖包-->
@@ -30,9 +27,50 @@
             <version>3.5.2</version>
         </dependency>
 
+        <!--配置spring包-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.0.13.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.zcp.mave.plugin</groupId>
+            <artifactId>apidoc-tools</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 
+
+    <!--升级jdk至1.8后就需要配置插件升级,否则编译报错如下
+        Failed to execute goal org.apache.maven.plugins:maven-plugin-plugin:3.2:descriptor (default-descriptor) on project apidoc-maven-plugin: Error extracting plugin descriptor: 'Method: 'name' not found in class: 'class org.apache.maven.tools.plugin.annotations.datamodel.ParameterAnnotationContent'' -> [Help 1]
+    -->
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.5</version>
+                <!--<executions>
+                    <execution>
+                        <id>default-addPluginArtifactMetadata</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>addPluginArtifactMetadata</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-descriptor</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>-->
+            </plugin>
+        </plugins>
+    </build>
 
 
 
