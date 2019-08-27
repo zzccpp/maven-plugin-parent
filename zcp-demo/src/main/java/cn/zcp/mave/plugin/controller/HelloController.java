@@ -21,9 +21,9 @@ public class HelloController {
     }
 
     @RequestMapping(value="/hi",method={RequestMethod.GET,RequestMethod.POST})
-    public String hello(HttpServletRequest request){
+    public String hello(String name, HttpServletRequest request){
         System.out.println("hello.....");
-        request.setAttribute("name","zcp");
+       // request.setAttribute("name","zcp");
         return "hello";
     }
 

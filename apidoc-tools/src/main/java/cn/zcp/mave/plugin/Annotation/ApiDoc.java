@@ -30,6 +30,12 @@ public @interface ApiDoc {
     String name() default "";
 
     /**
+     * 最后修改时间
+     * @return
+     */
+    String time() default "";
+
+    /**
      * 接口描述
      * @return
      */
